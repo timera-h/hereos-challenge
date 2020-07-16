@@ -44,6 +44,20 @@ async function createHero() {
 }
 
 
+// affiche tous les hero dc et marvel
+
+function getAllHeroes(biography) {
+    axios
+        .get(URL + "?_sort=id&_order=asc&biography.publisher=Marvel+Comics&biography.publisher=DC+Comics")
+        .then((apiRes) => {
+            const heroes = apiRes.data;
+            displayAllHeroes(heroes);
+        })
+        .catch((apiErr) => console.error(apiErr));
+}
+
+
+
 // afficher tous les heros de Marvel
 function getAllHeroesMarvel(biography) {
     axios
@@ -200,7 +214,7 @@ search.oninput=filterHero
 
 
 
-
+getAllHeroes();
 
 
 formPost.querySelector(".btn").onclick = createHero;
