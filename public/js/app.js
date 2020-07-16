@@ -3,7 +3,7 @@ const popup = document.getElementById("hero-details-popup");
 const btnMarvel = document.getElementById("img-marvel");
 const btnDc = document.getElementById("img-dc-commics");
 const formPost = document.getElementById("form-post-hero");
-
+const search = document.getElementById("input")
 
 console.log("hello");
 
@@ -20,10 +20,10 @@ async function createHero() {
     const fullName = document.getElementById("full-name").value;
     const alises = document.getElementById("aliases").value;
     const publisher = document.getElementById("publisher").value;
-    
+
 
     try {
-        
+
         await axios.post(URL, {
             name,
             gender,
@@ -34,11 +34,11 @@ async function createHero() {
             fullName,
             alises,
             publisher
-        }); 
-        
+        });
+
         getAllHeroes();
         console.log(createHero);
-    } catch(err){
+    } catch (err) {
         console.error(err);
     }
 }
@@ -53,9 +53,9 @@ function getAllHeroes(biography) {
             displayAllHeroes(heroes);
         })
         .catch((apiErr) => console.error(apiErr));
-    }
-    
-    // details de l'hero
+}
+
+// details de l'hero
 function getOneHero(id) {
     axios
         .get(`${URL}/${id}`)
@@ -160,5 +160,29 @@ btnMarvel.onclick = function () {
     btnMarvel.style.visibility = "hidden";
     getAllHeroes();
 }
+
+function filterHero() {
+    const filter = input.value.toUpperCase(); // transf en majuscule pour pouvoir tout rechercher. filter= a la valeur de input
+    const li = document.querySelectorAll(".hero");; //on appelle notre li 
+    for (let i = 0; i < li.length; i++) {
+
+        const liCourant = li[i].innerHTML.toUpperCase()
+        // on boucle tout les li et compare le contenu html  de chacun des li
+        if (liCourant.indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+
+}
+search.oninput=filterHero
+
+
+
+
+
+
+
 
 formPost.querySelector(".btn").onclick = createHero;
