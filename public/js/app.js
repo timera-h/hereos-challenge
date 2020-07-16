@@ -1,5 +1,5 @@
 const URL = "http://localhost:8000/heroes";
-const popup = document.getElementById("hero-details-popup");
+const modal = document.getElementById("hero-details-modal");
 const btnMarvel = document.getElementById("img-marvel");
 const btnDc = document.getElementById("img-dc-comics");
 const formPost = document.getElementById("form-post-hero");
@@ -96,7 +96,7 @@ function getOneHero(id) {
 // afficher detail de hero
 function displayOneHero(hero) {
     const wrapper = document.createElement("div");
-    popup.appendChild(wrapper);
+    modal.appendChild(wrapper);
 
     wrapper.outerHTML = `
     <div id="infos-hero">
@@ -115,12 +115,12 @@ function displayOneHero(hero) {
         </ul>
     </div>`;
 
-    popup.querySelector(".first").onblur = () => updateHero(hero.id);
-    popup.querySelector(".last").onblur = () => updateHero(hero.id);
-    popup.querySelector(".email").onblur = () => updateHero(hero.id);
-    popup.querySelector(".gender").onblur = () => updateHero(hero.id);
+    modal.querySelector(".first").onblur = () => updateHero(hero.id);
+    modal.querySelector(".last").onblur = () => updateHero(hero.id);
+    modal.querySelector(".email").onblur = () => updateHero(hero.id);
+    modal.querySelector(".gender").onblur = () => updateHero(hero.id);
 
-    popup.classList.remove("is-hidden");
+    modal.classList.remove("is-hidden");
 }
 
 // supprimer un hero
