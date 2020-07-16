@@ -102,27 +102,41 @@ function displayOneHero(hero) {
     <div id="infos-hero">
         <h3>
           <span contenteditable class="name">${hero.name}</span>
-          <span contenteditable class="full-name">${hero.full-name}</span>
-          <span contenteditable class="aliases">${hero.aliases}</span>
+          <span contenteditable class="full-name">${hero.biography.full-name}</span>
+          <span contenteditable class="aliases">${hero.biography.aliases}</span>
         </h3>
         <ul class="list-details">
-        <li contenteditable class="height">${hero.height}</li>
-        <li contenteditable class="weight">${hero.weight}</li>
-        <li contenteditable class="gender">${hero.gender}</li>
-        <li contenteditable class="race">${hero.race}</li>
-        <li contenteditable class="work">${hero.work}</li>
-        <li contenteditable class="combat">${hero.pawerstats.combat}</li>
+        <li contenteditable class="height">${hero.appearance.height}</li>
+        <li contenteditable class="weight">${hero.appearance.weight}</li>
+        <li contenteditable class="gender">${hero.appearance.gender}</li>
+        <li contenteditable class="race">${hero.appearance.race}</li>
+        <li contenteditable class="work">${hero.work.occupation}</li>
+        <li contenteditable class="combat">${hero.powerstats.combat}</li>
         </ul>
     </div>`;
 
-    modal.querySelector(".first").onblur = () => updateHero(hero.id);
-    modal.querySelector(".last").onblur = () => updateHero(hero.id);
-    modal.querySelector(".email").onblur = () => updateHero(hero.id);
+    modal.querySelector(".name").onblur = () => updateHero(hero.id);
+    modal.querySelector(".full-name").onblur = () => updateHero(hero.id);
+    modal.querySelector(".aliases").onblur = () => updateHero(hero.id);
+    modal.querySelector(".height").onblur = () => updateHero(hero.id);
+    modal.querySelector(".weight").onblur = () => updateHero(hero.id);
     modal.querySelector(".gender").onblur = () => updateHero(hero.id);
-
+    modal.querySelector(".race").onblur = () => updateHero(hero.id);
+    modal.querySelector(".work").onblur = () => updateHero(hero.id);
+    modal.querySelector(".combat").onblur = () => updateHero(hero.id);
+    
     modal.classList.remove("is-hidden");
 }
 
+// name,
+// gender,
+// work,
+// height,
+// weight,
+// combat,
+// fullName,
+// alises,
+// publisher
 // supprimer un hero
 async function deleteOnehero(id) {
     try {
