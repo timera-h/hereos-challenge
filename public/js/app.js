@@ -115,10 +115,10 @@ function displayOneHero(hero) {
         </ul>
     </div>`;
 
-    // popup.querySelector(".first").onblur = () => updateHero(hero.id);
-    // popup.querySelector(".last").onblur = () => updateHero(hero.id);
-    // popup.querySelector(".email").onblur = () => updateHero(hero.id);
-    // popup.querySelector(".gender").onblur = () => updateHero(hero.id);
+    popup.querySelector(".first").onblur = () => updateHero(hero.id);
+    popup.querySelector(".last").onblur = () => updateHero(hero.id);
+    popup.querySelector(".email").onblur = () => updateHero(hero.id);
+    popup.querySelector(".gender").onblur = () => updateHero(hero.id);
 
     popup.classList.remove("is-hidden");
 }
