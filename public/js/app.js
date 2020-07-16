@@ -1,7 +1,7 @@
 const URL = "http://localhost:8000/heroes";
 const popup = document.getElementById("hero-details-popup");
 const btnMarvel = document.getElementById("img-marvel");
-const btnDc = document.getElementById("img-dc-commics");
+const btnDc = document.getElementById("img-dc-comics");
 const formPost = document.getElementById("form-post-hero");
 const search = document.getElementById("input")
 
@@ -44,10 +44,22 @@ async function createHero() {
 }
 
 
-// afficher tous les heros
-function getAllHeroes(biography) {
+// afficher tous les heros de Marvel
+function getAllHeroesMarvel(biography) {
     axios
-        .get(URL + "?_sort=id&_order=asc&biography.publisher=Marvel+Comics&biography.publisher=DC+Comics")
+        .get(URL + "?_sort=id&_order=asc&biography.publisher=Marvel+Comics")
+        .then((apiRes) => {
+            const heroes = apiRes.data;
+            displayAllHeroes(heroes);
+        })
+        .catch((apiErr) => console.error(apiErr));
+}
+
+
+// affiche tous les hero de DC Commics 
+function getAllHeroesDC(biography) {
+    axios
+        .get(URL + "?_sort=id&_order=asc&biography.publisher=DC+Comics")
         .then((apiRes) => {
             const heroes = apiRes.data;
             displayAllHeroes(heroes);
@@ -155,10 +167,16 @@ function displayAllHeroes(list) {
 }
 
 
-// execute le getAllHero au clique et efface l'image
+// execute le getAllHeroMarvel au clique et efface l'image
 btnMarvel.onclick = function () {
     btnMarvel.style.visibility = "hidden";
-    getAllHeroes();
+    getAllHeroesMarvel();
+}
+
+// execute le getAllHeroDC au clique et efface l'image
+btnDc.onclick = function () {
+    btnDc.style.visibility = "hidden";
+    getAllHeroesDC();
 }
 
 function filterHero() {
