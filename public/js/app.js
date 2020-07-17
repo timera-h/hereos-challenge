@@ -144,7 +144,7 @@ function displayOneHero(hero) {
 //     modal.querySelector(".work").onblur = () => updateHero(hero.id);
 //     modal.querySelector(".combat").onblur = () => updateHero(hero.id);
     
-    modal.classList.remove("is-hidden");
+    modal.classList.removegit("is-hidden");
 }
 
 // name,
@@ -189,7 +189,8 @@ function displayAllHeroes(list) {
         // setup li's markup
         li.innerHTML = `
             <h3>${hero.name} </h3>
-           <figure> <img src="${hero.image.url}"> </figure> 
+           <figure> <img src="${heroe.image && heroe.image.url}" alt=""> </figure> 
+           <p class="publisher">${heroe.biography && heroe.biography.publisher}</p>
             <div class="buttons">
                 <button class="btn remove">remove</button>
                 <button class="btn details">details</button>
