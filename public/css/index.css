@@ -6,7 +6,7 @@
 
 body{
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  background: red;
+  background: #ED1D24;
 }
 
 
@@ -18,15 +18,21 @@ body{
 #hero-details-modal {
   height: 52vh;
   width: 90vh;
-  background: white;
+  background: rgb(22,24,93);
+  background: linear-gradient(0deg, rgba(22, 24, 93, 0.9) 0%, rgba(24,22,139,0.9) 100%);
   position: absolute;
   opacity: 1;
   z-index: 10;
-  top: 348px;
-  right: 0;
+  top: 268px;
   bottom: 0;
-  left: 512px;
- position: fixed;
+  left: 55vh;
+  position: fixed;
+  padding: 10px;
+  box-shadow: 37px 36px 28px black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
 }
 
 #hero-details-modal .btn {
@@ -34,36 +40,170 @@ body{
   top: 20px;
   right: 20px;
 }
-
-#img-dc-comics
-{
-  min-width:354px ;
-  height: 142px;
+.list-details{
+  list-style: none;
+  text-align: center;
+  margin-top: -100px;
 }
+li{font-size: 18px;
+  font-family: 'Permanent Marker', cursive;
+color: white;
+margin-top: 5px;}
+
+
 #img-dc-comics,
 #img-marvel{
   cursor: pointer;
+  min-width:354px ;
+  height: 142px;
+  margin-right: 10px;
 }
 
-
+#img-marvel:active,
+#img-dc-comics:active
+ {min-width:300px ;
+  height: 100px;}
 .logo{
 
   display: flex;
   justify-content: space-around;
-  align-items: center;}
-
-  .title{font-weight: 300px;
-  margin-left: 800px;
+  align-items: center;
+}
+  .title, h3{
+    font-family: 'Montserrat Subrayada', sans-serif;
+    font-weight: 300px;
+   color: black;
+    font-size: 20px;
+     text-align: center;
+     margin: 10px 0 10px 0
   ;}
 
-  #input{    width: 300px;
+  .titleun{
+    font-family: 'Montserrat Subrayada', sans-serif;
+    text-align: center;
+  }
+
+  #input{       
+    width: 300px;
     height: 44px;
-    margin-left: 795px;
     margin-bottom: 100px;
     margin-top: 50px;
+    justify-content: space-around;
+    align-items: center;
 }
 
 #modal{
 height: 100vh;
 width: 400px;
+}
+
+.listAllHeroes {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 60vw;
+  top: 100px;
+}
+
+
+.hero{
+  border: 1px solid;
+  border-radius: 0.3rem;
+  padding: 10px;
+  flex-direction: column;
+  min-height: 120px;
+  min-width: 220px;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#form-post-hero{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 115px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-bottom: 108px;
+} 
+
+.btn {
+  cursor: pointer;
+  border: none;
+  width: 100px;
+  height: 22px;
+  margin:10px 0 10px 18px;
+  box-shadow: 34px 18px 22px black;
+  border-radius: 10%
+}
+
+.btn:hover {
+  background: rgb(32, 32, 53);
+  color: whitesmoke;
+}
+
+header{
+  background: rgb(0,0,0);
+  background: linear-gradient(0deg, rgba(0,0,0,0.4849796938092521) 0%, rgba(11,11,11,1) 50%);
+  color: whitesmoke;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 20px;
+  flex-direction: column-reverse;
+  flex-wrap: wrap;
+  margin-bottom: 100px;
+  width: 100%;
+}
+
+img{
+  margin: 16px;
+  box-shadow: 34px 18px 22px black;
+  min-width: 250px
+}
+
+.identite{width: 80px;
+height: 90px;
+position: relative;
+}
+
+main{
+  padding: 50px;
+}
+
+/* MEDIA QUERY */
+@media screen and (max-width:768px) {
+.logo {
+ width: 100%;
+display:flex;
+flex-direction: column;}
+
+ #img-dc-comics, #img-marvel {
+
+  min-width: 256px;
+  height: 117px;
+box-shadow: none;}
+
+  main{
+    padding: 10px;
+  }
+
+  img{
+  width: 250px;
+  box-shadow: none;
+
+  }
+
+  .input-header{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: 320px;
+  }
+
+  #input{
+    width: 250px;
+
+  }
 }
