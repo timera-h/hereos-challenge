@@ -1,10 +1,10 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body{
+body {
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   background: #ED1D24;
 }
@@ -15,86 +15,128 @@ body{
   z-index: -1;
 }
 
-#hero-details-modal {
-  height: 52vh;
-  width: 90vh;
-  background: rgb(22,24,93);
-  background: linear-gradient(0deg, rgba(22, 24, 93, 0.9) 0%, rgba(24,22,139,0.9) 100%);
+/* #infos-hero{
+  height: 70vh;
+  width: 50vw;
+  background: rgb(22, 24, 93);
+  background: linear-gradient(0deg, rgba(22, 24, 93, 0.9) 0%, rgba(24, 22, 139, 0.9) 100%);
   position: absolute;
   opacity: 1;
   z-index: 10;
-  top: 268px;
+  top: 200px;
+  bottom: 0;  
+  position: fixed;
+  padding: 10px;
+  box-shadow: 37px 36px 28px black;
+} */
+
+#hero-details-modal {
+  height: 70vh;
+  width: 50vw;
+  background: rgb(22, 24, 93);
+  background: linear-gradient(0deg, rgba(22, 24, 93, 0.9) 0%, rgba(24, 22, 139, 0.9) 100%);
+  position: absolute;
+  opacity: 1;
+  z-index: 10;
+  top: 150px;
   bottom: 0;
-  left: 55vh;
+  left: 25vw;
   position: fixed;
   padding: 10px;
   box-shadow: 37px 36px 28px black;
   display: flex;
   justify-content: center;
   align-items: center;
-  
 }
 
-#hero-details-modal .btn-fermer {
+.modal-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 10%;
+}
+
+.modal-image img {
+  width: 50px;
+  height: auto;
+  position: relative;
+}
+
+#hero-details-modal h3 {
+  color: white;
+}
+
+#hero-details-modal #close-hero-modal {
   position: absolute;
   top: 20px;
   right: 20px;
 }
-.list-details{
+
+.list-details {
   list-style: none;
   text-align: center;
   margin-top: -100px;
 }
-li{font-size: 18px;
+
+li {
+  font-size: 18px;
   font-family: 'Permanent Marker', cursive;
-color: white;
-margin-top: 5px;}
+  color: white;
+  margin-top: 5px;
+}
 
 
 #img-dc-comics,
-#img-marvel{
+#img-marvel {
   cursor: pointer;
-  min-width:354px ;
+  min-width: 354px;
   height: 142px;
   margin-right: 10px;
 }
 
 #img-marvel:active,
-#img-dc-comics:active
- {min-width:300px ;
-  height: 100px;}
-.logo{
+#img-dc-comics:active {
+  min-width: 300px;
+  height: 100px;
+}
+
+.logo {
 
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
-  .title, h3{
-    font-family: 'Montserrat Subrayada', sans-serif;
-    font-weight: 300px;
-   color: black;
-    font-size: 20px;
-     text-align: center;
-     margin: 10px 0 10px 0
-  ;}
 
-  .titleun{
-    font-family: 'Montserrat Subrayada', sans-serif;
-    text-align: center;
-  }
-
-  #input{       
-    width: 300px;
-    height: 44px;
-    margin-bottom: 100px;
-    margin-top: 50px;
-    justify-content: space-around;
-    align-items: center;
+.title,
+h3 {
+  font-family: 'Montserrat Subrayada', sans-serif;
+  font-weight: 300px;
+  color: black;
+  font-size: 20px;
+  text-align: center;
+  margin: 10px 0 10px 0;
 }
 
-#modal{
-height: 100vh;
-width: 400px;
+.titleun {
+  font-family: 'Montserrat Subrayada', sans-serif;
+  text-align: center;
+}
+
+#input {
+  width: 300px;
+  height: 44px;
+  margin-bottom: 100px;
+  margin-top: 50px;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#modal {
+  height: 100vh;
+  width: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .listAllHeroes {
@@ -105,7 +147,7 @@ width: 400px;
 }
 
 
-.hero{
+.hero {
   border: 1px solid;
   border-radius: 0.3rem;
   padding: 10px;
@@ -118,7 +160,7 @@ width: 400px;
   align-items: center;
 }
 
-#form-post-hero{
+#form-post-hero {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -127,9 +169,9 @@ width: 400px;
   flex-wrap: wrap;
   margin-bottom: 108px;
   width: 100%;
-} 
+}
 
-.form-flex{
+.form-flex {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -137,7 +179,7 @@ width: 400px;
   width: 70%;
 }
 
-#form-post-hero input{
+#form-post-hero input {
   width: 50%;
   height: 25px;
   border-radius: 5px;
@@ -150,7 +192,7 @@ width: 400px;
   border: none;
   width: 100px;
   height: 22px;
-  margin:10px 0 10px 18px;
+  margin: 10px 0 10px 18px;
   box-shadow: 34px 18px 22px black;
   border-radius: 10px;
   margin: auto;
@@ -161,9 +203,9 @@ width: 400px;
   color: whitesmoke;
 }
 
-header{
-  background: rgb(0,0,0);
-  background: linear-gradient(0deg, rgba(0,0,0,0.4849796938092521) 0%, rgba(11,11,11,1) 50%);
+header {
+  background: rgb(0, 0, 0);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.4849796938092521) 0%, rgba(11, 11, 11, 1) 50%);
   color: whitesmoke;
   display: flex;
   align-items: center;
@@ -175,52 +217,96 @@ header{
   width: 100%;
 }
 
-img{
+img {
   margin: 16px;
   box-shadow: 34px 18px 22px black;
   min-width: 250px
 }
 
-.identite{width: 80px;
-height: 90px;
-position: relative;
-}
 
-main{
+
+main {
   padding: 50px;
 }
 
 /* MEDIA QUERY */
-@media screen and (max-width:768px) {
-.logo {
- width: 100%;
-display:flex;
-flex-direction: column;}
 
- #img-dc-comics, #img-marvel {
+@media screen and (max-width: 1024px){
 
-  min-width: 256px;
-  height: 117px;
-box-shadow: none;}
+  #hero-details-modal{
+    top: 100px;
+    left: 20vw;
+  }
+  /* .logo {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
 
-  main{
+  #img-dc-comics,
+  #img-marvel {
+
+    min-width: 256px;
+    height: 117px;
+    box-shadow: none;
+  }
+
+  main {
     padding: 10px;
   }
 
-  img{
-  width: 250px;
-  box-shadow: none;
+  img {
+    width: 250px;
+    box-shadow: none;
 
   }
 
-  .input-header{
-    display:flex;
+  .input-header {
+    display: flex;
     justify-content: center;
     align-items: center;
     width: 320px;
   }
 
-  #input{
+  #input {
+    width: 250px;
+
+  } */
+}
+
+@media screen and (max-width:768px) {
+  .logo {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #img-dc-comics,
+  #img-marvel {
+
+    min-width: 256px;
+    height: 117px;
+    box-shadow: none;
+  }
+
+  main {
+    padding: 10px;
+  }
+
+  img {
+    width: 250px;
+    box-shadow: none;
+
+  }
+
+  .input-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 320px;
+  }
+
+  #input {
     width: 250px;
 
   }
