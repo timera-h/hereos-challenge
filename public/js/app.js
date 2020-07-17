@@ -94,36 +94,7 @@ function getOneHero(id) {
 }
 
 // afficher detail de hero
-// function displayOneHero(hero) {
-//     const section = document.getElementById("hero-details-modal");
-//     section.innerHTML = "";
-//     const div = document.createElement("div");
-//     div.classList.add("modal")
-//     div.innerHTML = `<h2>${hero.name}<h2>
-//     <ul> 
-//     <li class="details">${hero.biography && hero.biography.fullName || hero.fullName}</li>
-//     <li class="details">${hero.biography && hero.biography.aliases || hero.aliases}</li>
-//     <li class="details">${hero.biography && hero.biography.fullName || hero.fullName}</li>
-//     <li class="details">${hero.appareance && hero.appareance.height || hero.height}</li>
-//     <li class="details">${hero.appareance && hero.appareance.weight || hero.weight}</li>
-//     <li class="details">${hero.appareance && hero.appareance.gender || hero.gender}</li>
-//     <li class="details">${hero.appareance && hero.appareance.race || hero.race}</li>
-//     <li class="details">${hero.work && hero.work.occupation|| hero.occupation}</li>
-//     <li class="details">${hero.powerstats && hero.powerstats.combat|| hero.combat}</li>
-//     </ul>
-//     <button id="close-hero-modal" class="btn">x</button>
-//     `
-//     section.appendChild(div)
-
-//     modal.classList.remove("is-hidden");
-// }
-// function removeModal() {
-//     const wrapper = modal.querySelector("div");
-//     wrapper.remove();
-//     modal.classList.add("is-hidden");
-//   }
-
-  function displayOneHero(hero) {
+function displayOneHero(hero) {
     const wrapper = document.createElement("div");
     modal.appendChild(wrapper);
 
@@ -157,15 +128,23 @@ function getOneHero(id) {
     modal.querySelector(".work").onblur = () => updateHero(hero.id);
     modal.querySelector(".combat").onblur = () => updateHero(hero.id);
     
-    modal.classList.removegit("is-hidden");
+    modal.classList.remove("is-hidden");
 }
 function removeModal() {
     const wrapper = modal.querySelector("div");
     wrapper.remove();
     modal.classList.add("is-hidden");
   }
-
-
+// name,
+// gender,
+// work,
+// height,
+// weight,
+// combat,
+// fullName,
+// alises,
+// publisher
+// supprimer un hero
 async function deleteOnehero(id) {
     try {
         await axios.delete(`${URL}/${id}`);
@@ -198,8 +177,7 @@ function displayAllHeroes(list) {
         // setup li's markup
         li.innerHTML = `
             <h3>${hero.name} </h3>
-           <figure> <img src="${heroe.image && heroe.image.url}" alt=""> </figure> 
-           <p class="publisher">${heroe.biography && heroe.biography.publisher}</p>
+           <figure> <img src="${hero.image.url}"> </figure> 
             <div class="buttons">
                 <button class="btn remove">remove</button>
                 <button class="btn details">details</button>
