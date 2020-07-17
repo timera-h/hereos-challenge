@@ -144,7 +144,7 @@ function displayOneHero(hero) {
 //     modal.querySelector(".work").onblur = () => updateHero(hero.id);
 //     modal.querySelector(".combat").onblur = () => updateHero(hero.id);
     
-close-hero-modal.classList.remove("is-hidden");
+    modal.classList.remove("is-hidden");
 }
 
 // name,
