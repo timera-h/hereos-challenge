@@ -1,59 +1,72 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <link rel="stylesheet" href="./public/css/index.css" />
-    <script type="module" src="./public/js/app.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Subrayada&family=Permanent+Marker&display=swap" rel="stylesheet">
 
-  </head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <link rel="stylesheet" href="./public/css/index.css" />
+  <script type="module" src="./public/js/app.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat+Subrayada&family=Permanent+Marker&display=swap"
+    rel="stylesheet">
+
+</head>
+
 <body>
   <header>
-<div class="input-header">
-    <input id="input" class="inp" type="text" placeholder="Je recherche mon héro..."></div>
-<hr>
+    <div class="input-header">
+      <input id="input" class="inp" type="text" placeholder="Je recherche mon héro..."></div>
+    <hr>
     <ul id="list"></ul>
     <figure class="logo">
-        <img id="img-marvel" src="./public/img/marvel.png" alt="marvel">
-        <img id="img-dc-comics" src="./public/img/dc.jpg" alt="dc commics">
+      <img id="img-marvel" src="./public/img/marvel.png" alt="marvel">
+      <img id="img-dc-comics" src="./public/img/dc.jpg" alt="dc commics">
     </figure>
-    
+
     <h1 class="titleun">Marvel x Dc Comics</h1>
-</header>
-<main>
-     
-        <h2 class="title">Remplir les champs pour ajouter un nouveau personnage.</h2> 
-        <div id="form-post-hero" class="form">
-        <input id="name" class="input" name="name" type="text" class="input" placeholder="name">
-        <input id="full-name" class="input" name="full-name" type="text" class="input" placeholder="full name">
-        <input id="aliases" class="input" name="aliases" type="text" class="input" placeholder="aliases">
-        <input id="height" class="input" name="height" type="text" class="input" placeholder="height">
-        <input id="weight" class="input" name="weight" type="text" class="input" placeholder="weight">
-        <input id="race" class="input" name="race" type="text" class="input" placeholder="race">
-        <input id="work" class="input" name="work" type="text" class="input" placeholder="work">
-        <input id="combat" class="input" name="combat" type="text" class="input" placeholder="combat">
-        <input id="publisher" class="input" name="publisher" type="text" class="input" placeholder="publisher">
+  </header>
+  <main>
 
-        <label for="female" class="label">Female</label>
-        <input id="female" type="radio" name="gender" checked>
-        <label for="male" class="label">Male</label>
-        <input id="male" type="radio" name="gender" > 
-        <button class="btn">ok</button>
-      </div>
-      <hr>
+    <h2 class="title">Remplir les champs pour ajouter un nouveau personnage.</h2>
+    <div id="form-post-hero" class="form">
+      <div class="form-flex">
+      <input id="name" class="input" name="name" type="text" class="input" placeholder="name">
+      <input id="full-name" class="input" name="full-name" type="text" class="input" placeholder="full name">
+      <input id="aliases" class="input" name="aliases" type="text" class="input" placeholder="aliases">
+      <input id="height" class="input" name="height" type="text" class="input" placeholder="height">
+      <input id="weight" class="input" name="weight" type="text" class="input" placeholder="weight">
+      <input id="race" class="input" name="race" type="text" class="input" placeholder="race">
+      <input id="work" class="input" name="work" type="text" class="input" placeholder="work">
+      <input id="combat" class="input" name="combat" type="text" class="input" placeholder="combat">
+      <input id="publisher" class="input" name="publisher" type="text" class="input" placeholder="publisher">
 
+      <label for="female" class="label">Female</label>
+          <input id="female" type="radio" name="gender" checked>
+                <label for="male" class="label">Male</label>
+                <input id="male" type="radio" name="gender" > 
+                <button class="btn">ok</button>
+              </div></div>
+              <hr>
+        
+            <ul id="listAllHeroes"></ul>
+            <div id="hero-details-modal" class="is-hidden">
+                <button id="close-hero-modal" class="btn-fermer">x</button>
+              </div>
+        
+    <hr>
+
+    <div class="btn-radio">
     <ul id="listAllHeroes"></ul>
-    <div id="hero-details-modal" class="is-hidden">
-        <button id="close-hero-modal" class="btn">x</button>
-      </div>
+    <div id="hero-details-modal" class="is-hidden"></div>
+      <button id="close-hero-modal" class="btn">x</button>
+    </div>
 
-    
-    </main>
 
-  
+  </main>
+
+
 
 </body>
+
 </html>

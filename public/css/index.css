@@ -35,7 +35,7 @@ body{
   
 }
 
-#hero-details-modal .btn {
+#hero-details-modal .btn-fermer {
   position: absolute;
   top: 20px;
   right: 20px;
@@ -121,12 +121,29 @@ width: 400px;
 #form-post-hero{
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
   padding: 115px;
-  flex-direction: row;
+  /* flex-direction: row; */
   flex-wrap: wrap;
   margin-bottom: 108px;
+  width: 100%;
 } 
+
+.form-flex{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 70%;
+}
+
+#form-post-hero input{
+  width: 50%;
+  height: 25px;
+  border-radius: 5px;
+  padding-left: 1%;
+  margin: 10px auto;
+}
 
 .btn {
   cursor: pointer;
@@ -135,7 +152,8 @@ width: 400px;
   height: 22px;
   margin:10px 0 10px 18px;
   box-shadow: 34px 18px 22px black;
-  border-radius: 10%
+  border-radius: 10px;
+  margin: auto;
 }
 
 .btn:hover {
