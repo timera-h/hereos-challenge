@@ -94,69 +94,78 @@ function getOneHero(id) {
 }
 
 // afficher detail de hero
-function displayOneHero(hero) {
-    const section = document.getElementById("hero-details-modal");
-    section.innerHTML = "";
-    const div = document.createElement("div");
-    div.classList.add("modal")
-    div.innerHTML = `<h2>${hero.name}<h2>
-    <ul> 
-    <li class="details">${hero.biography && hero.biography.fullName || hero.fullName}</li>
-    <li class="details">${hero.biography && hero.biography.aliases || hero.aliases}</li>
-    <li class="details">${hero.biography && hero.biography.fullName || hero.fullName}</li>
-    <li class="details">${hero.appareance && hero.appareance.height || hero.height}</li>
-    <li class="details">${hero.appareance && hero.appareance.weight || hero.weight}</li>
-    <li class="details">${hero.appareance && hero.appareance.gender || hero.gender}</li>
-    <li class="details">${hero.appareance && hero.appareance.race || hero.race}</li>
-    <li class="details">${hero.work && hero.work.occupation|| hero.occupation}</li>
-    <li class="details">${hero.powerstats && hero.powerstats.combat|| hero.combat}</li>
-    </ul>
-    <button id="close-hero-modal" class="btn">x</button>
-    `
-    section.appendChild(div)
-//     const wrapper = document.createElement("div");
-//     modal.appendChild(wrapper);
+// function displayOneHero(hero) {
+//     const section = document.getElementById("hero-details-modal");
+//     section.innerHTML = "";
+//     const div = document.createElement("div");
+//     div.classList.add("modal")
+//     div.innerHTML = `<h2>${hero.name}<h2>
+//     <ul> 
+//     <li class="details">${hero.biography && hero.biography.fullName || hero.fullName}</li>
+//     <li class="details">${hero.biography && hero.biography.aliases || hero.aliases}</li>
+//     <li class="details">${hero.biography && hero.biography.fullName || hero.fullName}</li>
+//     <li class="details">${hero.appareance && hero.appareance.height || hero.height}</li>
+//     <li class="details">${hero.appareance && hero.appareance.weight || hero.weight}</li>
+//     <li class="details">${hero.appareance && hero.appareance.gender || hero.gender}</li>
+//     <li class="details">${hero.appareance && hero.appareance.race || hero.race}</li>
+//     <li class="details">${hero.work && hero.work.occupation|| hero.occupation}</li>
+//     <li class="details">${hero.powerstats && hero.powerstats.combat|| hero.combat}</li>
+//     </ul>
+//     <button id="close-hero-modal" class="btn">x</button>
+//     `
+//     section.appendChild(div)
 
-//     wrapper.outerHTML = `
-// //     <div id="infos-hero">
-// //         <h3>
-// //           <span contenteditable class="name">${hero.name}</span>
-// //           <span contenteditable class="full-name">${hero.biography.full-name}</span>
-// //           <span contenteditable class="aliases">${hero.biography.aliases}</span>
-// //         </h3>
-// //         <ul class="list-details">
-// //         <li contenteditable class="height">${hero.appearance.height}</li>
-// //         <li contenteditable class="weight">${hero.appearance.weight}</li>
-// //         <li contenteditable class="gender">${hero.appearance.gender}</li>
-// //         <li contenteditable class="race">${hero.appearance.race}</li>
-// //         <li contenteditable class="work">${hero.work.occupation}</li>
-// //         <li contenteditable class="combat">${hero.powerstats.combat}</li>
-// //         </ul>
-// //     </div>`;
+//     modal.classList.remove("is-hidden");
+// }
+// function removeModal() {
+//     const wrapper = modal.querySelector("div");
+//     wrapper.remove();
+//     modal.classList.add("is-hidden");
+//   }
 
-//     modal.querySelector(".name").onblur = () => updateHero(hero.id);
-//     modal.querySelector(".full-name").onblur = () => updateHero(hero.id);
-//     modal.querySelector(".aliases").onblur = () => updateHero(hero.id);
-//     modal.querySelector(".height").onblur = () => updateHero(hero.id);
-//     modal.querySelector(".weight").onblur = () => updateHero(hero.id);
-//     modal.querySelector(".gender").onblur = () => updateHero(hero.id);
-//     modal.querySelector(".race").onblur = () => updateHero(hero.id);
-//     modal.querySelector(".work").onblur = () => updateHero(hero.id);
-//     modal.querySelector(".combat").onblur = () => updateHero(hero.id);
+  function displayOneHero(hero) {
+    const wrapper = document.createElement("div");
+    modal.appendChild(wrapper);
+
+    wrapper.outerHTML = `
+    <div id="infos-hero">
+        <h3>
+          <span contenteditable class="name">${hero.name}</span>
+          <span contenteditable class="full-name">${hero.biography.full-name}</span>
+          <span contenteditable class="aliases">${hero.biography.aliases}</span>
+        </h3>
+
+        <img class="identite" src="${hero.image.url}" >
+        <ul class="list-details">
+
+        <li contenteditable class="height">○ Taille: ${hero.appearance.height}</li>
+        <li contenteditable class="weight">○ Poids:  ${hero.appearance.weight}</li>
+        <li contenteditable class="gender">○ Genre: ${hero.appearance.gender}</li>
+        <li contenteditable class="race">○ Race: ${hero.appearance.race}</li>
+        <li contenteditable class="work">○ Job: ${hero.work.occupation}</li>
+        <li contenteditable class="combat">○ Combats: ${hero.powerstats.combat}</li>
+        </ul>
+    </div>`;
+
+    modal.querySelector(".name").onblur = () => updateHero(hero.id);
+    modal.querySelector(".full-name").onblur = () => updateHero(hero.id);
+    modal.querySelector(".aliases").onblur = () => updateHero(hero.id);
+    modal.querySelector(".height").onblur = () => updateHero(hero.id);
+    modal.querySelector(".weight").onblur = () => updateHero(hero.id);
+    modal.querySelector(".gender").onblur = () => updateHero(hero.id);
+    modal.querySelector(".race").onblur = () => updateHero(hero.id);
+    modal.querySelector(".work").onblur = () => updateHero(hero.id);
+    modal.querySelector(".combat").onblur = () => updateHero(hero.id);
     
     modal.classList.remove("is-hidden");
 }
+function removeModal() {
+    const wrapper = modal.querySelector("div");
+    wrapper.remove();
+    modal.classList.add("is-hidden");
+  }
 
-// name,
-// gender,
-// work,
-// height,
-// weight,
-// combat,
-// fullName,
-// alises,
-// publisher
-// supprimer un hero
+
 async function deleteOnehero(id) {
     try {
         await axios.delete(`${URL}/${id}`);
@@ -216,13 +225,13 @@ function displayAllHeroes(list) {
 
 // execute le getAllHeroMarvel au clique et efface l'image
 btnMarvel.onclick = function () {
-    btnMarvel.style.visibility = "hidden";
+    // btnMarvel.style.visibility = "hidden";
     getAllHeroesMarvel();
 }
 
 // execute le getAllHeroDC au clique et efface l'image
 btnDc.onclick = function () {
-    btnDc.style.visibility = "hidden";
+    // btnDc.style.visibility = "hidden";
     getAllHeroesDC();
 }
 
@@ -251,3 +260,4 @@ getAllHeroes();
 
 
 formPost.querySelector(".btn").onclick = createHero;
+document.getElementById("close-hero-modal").onclick = removeModal;
