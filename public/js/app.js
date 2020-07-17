@@ -106,7 +106,7 @@ function displayOneHero(hero) {
           <span contenteditable class="aliases">${hero.biography.aliases}</span>
         </h3>
 
-        <img class="identite" src="${hero.image.url}" >
+        <figure class="modal-image"><img class="identite" src="${hero.image.url}"></figure>
         <ul class="list-details">
 
         <li contenteditable class="height">○ Taille: ${hero.appearance.height}</li>
@@ -178,6 +178,7 @@ function displayAllHeroes(list) {
         li.innerHTML = `
             <h3>${hero.name} </h3>
            <figure> <img src="${hero.image.url}"> </figure> 
+
             <div class="buttons">
                 <button class="btn remove">remove</button>
                 <button class="btn details">details</button>
